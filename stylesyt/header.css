@@ -1,0 +1,163 @@
+.header{
+    height: 55px;   /*instead of bottom so to avoid full 50px down coverage*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(226, 225, 225);
+    z-index: 100;  /* to put header above all content as relative position and being below header div is maing priority for others*/
+                   /*100>0(thumbnail-row has deault z-index of 0) so 100 is given priority*/
+}
+.lhs{
+ display: flex;  /* for align to work flex display is used*/
+ align-items: center;
+   }
+.center{
+   display: flex;
+   align-items: center;
+   flex: 1;  /*flexibly stretch in/out the box */
+   margin-left: 70px;
+   margin-right:35px;
+   max-width: 500px; /* fix width of center to limit resizing of search bar*/
+}
+.rhs{
+    display: flex;
+    align-items:center;
+    width: 200px;
+    margin-right: 20px;
+    flex-shrink: 0;   /*to avoid items shrinking with resizing*/
+    justify-content: space-between;   /*even spread in given flexbox*/
+}
+.YT-logo{
+    height:20px;
+    cursor: pointer;
+
+}
+.lines-logo{
+    height:24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    cursor: pointer;
+    
+}
+.profile{
+    border-radius: 50%;
+    width: 40px;
+}
+.search-logo{
+    height:20px;
+}
+.search-button{
+    height:28px;
+    cursor: pointer;
+    width: 50px;
+    background-color: rgb(240,240,240);
+    border-width: 1px;
+    border-style:solid;
+    border-color: rgb(192,192,192);
+    margin-left: -1px;   /* -ve to move button bckwd and merge w/ search bar*/
+}
+.search-button, .voice-button, .upload-tooltip-container, .apps-tooltip-container, .notfcontnr{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-button .tooltip, .voice-button .tooltip, .upload-tooltip-container .tooltip, .apps-tooltip-container .tooltip, .notfcontnr .tooltip     /*targeting. tt class of .sb class*/
+{
+    position: absolute;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: gray;
+    color: white;
+    font-size: 12px;
+    border-radius: 2px;
+    bottom: -30px;
+    opacity: 0;
+    transition: 0.15s;
+    pointer-events: none;    /* so that hover doesn't apply to tooltip as well but button*/
+    white-space: nowrap;     /*voice button tooltip dimsn fit as no wrappin of text now*/
+}
+.search-button:hover .tooltip, .voice-button:hover .tooltip, .upload-tooltip-container:hover .tooltip, .apps-tooltip-container:hover .tooltip, .notfcontnr:hover .tooltip{         /*targeting tooltip only when hovering on sb*/
+     opacity: 1;
+}
+.voice-logo{
+    height: 20px;
+   
+}
+.voice-button{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(245,245,245);
+    border: none;
+    margin-left: 10px;
+    border-radius: 50%  /* ellipse will form at 50% if h,w not sq. dimsn*/
+}
+.search-bar{
+    flex:1;
+    height: 25px;
+    border-width: 1px;
+    padding-left:10px;
+    font-size: 16px;
+    border: 1px solid rgb(192,192,192);
+    border-radius: 2px;
+    outline: none;   /* Removes default black outline */
+    transition: border-color 0.15s ease;    /* Smooth transition */
+    width: 0; /* to remove default width, box will now shrink as much as possible*/
+    box-shadow: inset 1px 2px 3px rgba(o, 0, 0, 0.05)  /*inset for inside shadow, values are for horzntl posn, vertcl posn(bottom), blur 3px*/
+}
+.search-bar:focus {
+    border-color: rgb(131, 201, 241);     /*no black color while clicking on to write with focus, but blue, focus is used and not active bcz it stays till user writes*/
+  }
+.search-bar::placeholder{         /*targets placeholder on any input family*/
+ font-size: 16px;
+}
+.upload{
+   height: 24px;
+   cursor: pointer;
+}
+.apps{
+    height: 24px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.notifications{
+    height: 24px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.profile{
+    height:30px;
+    width:30px;
+    border-radius: 50%;  /* or instead of setting sq. dimsn just set h and set border radius to 1/2 the value oh h*/
+    margin-top:4px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.notfcontnr{
+    position: relative;
+}
+.notfno{
+    position: absolute;
+    background-color: rgb(204, 0, 0);
+    color: white;
+    top:2px;
+    right:-4px;
+    padding-left:5px;
+    padding-right: 5px;
+    padding-top:1.5px;
+    padding-bottom:1.5px;
+    border-radius: 50%;
+    font-size: 11px;
+}
+
+

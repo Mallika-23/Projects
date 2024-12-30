@@ -1,0 +1,29 @@
+.sidebar{
+    position: fixed;
+    left:0;
+    width: 72px;
+    bottom: 0;
+    top: 55px;  /*whatever height of header is*/
+    background-color: white;
+    z-index: 200;
+    padding-top: 5px;
+}
+.b1{                   /* example of class-name selector which starts w/ a .*/
+cursor: pointer;                 
+height: 74px;
+display: flex;
+justify-content: center;   /* horizontal center*/
+align-items: center;        /* vertical center*/
+flex-direction: column;   /*boxes vertically on each other, as row direction is default and flexboxes appear horizontal to each other*/   
+}
+.b1:hover{
+    background-color: rgb(235,235,235);
+} 
+.b1 img{              /* selector taking imgs of b1 class only, no need to make repetitive classes*/
+    height:24px;
+    margin-bottom: 4px; 
+}
+.b1 div{               /* again, targeting all divs inside b1 and not all divs on the page*/
+    font-size: 10px;
+   
+}
